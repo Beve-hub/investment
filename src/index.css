@@ -8,22 +8,36 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --text-extra:#ffff;
+  --text-color:#121212;
+  --bg-color: #003e62;
+  --button-color: #FFC700;
+  --hover-color: #003e62;
+  --layer-color: #F6F6F6;
+  --layer-colo: #989898;
+  --layers-colo: #cfcfcf90;  
+  --tetra-color: #90f7d8;
+  --base-color: #750037;
+  --bases-color: #75003780;
+  --base-colors: #75003730;
 
   
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  place-items: center;  
+  overflow-x: hidden;
 }
 
+.active {
+  @apply text-[#FFC700]  font-bold  ;
+}
+
+.active img {
+  filter: invert(81%) sepia(79%) saturate(6528%) hue-rotate(320deg) brightness(90%) contrast(90%);
+
+}

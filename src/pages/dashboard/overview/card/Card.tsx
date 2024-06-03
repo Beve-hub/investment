@@ -1,0 +1,60 @@
+
+
+const Card = () => {
+    return (
+        <div className='grid items-center justify-between gap-6 md:grid-cols-4'>
+        <div  className='grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+            <div className='grid gap-1'>
+              <h2 className='text-lg font-semibold'>Total Balance</h2>
+            </div>
+            <div className='grid gap-2'>
+              <div className='flex items-center gap-2'>
+                <span className='font-medium text-xl'>$</span>
+                <h1 className='font-bold text-2xl'>0.00</h1>
+              </div>
+              <p className='text-sm'>Available Balance</p>
+            </div>
+          </div>
+          <div  className='grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+            <div className='grid gap-1'>
+              <h2 className='text-lg font-semibold'>Total BTC Balance</h2>
+            </div>
+            <div className='grid gap-2'>
+              <div className='flex items-center gap-2'>
+                <span className='font-medium text-xl'>$</span>
+                <h1 className='font-bold text-2xl'>0.00</h1>
+              </div>
+              <p className='text-sm'>Available Balance</p>
+            </div>
+          </div>
+          <div  className='grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+            <div className='grid gap-1'>
+              <h2 className='text-lg font-semibold'>Total Eth Balance</h2>
+            </div>
+            <div className='grid gap-2'>
+              <div className='flex items-center gap-2'>
+                <span className='font-medium text-xl'>$</span>
+                <h1 className='font-bold text-2xl'>0.00</h1>
+              </div>
+              <p className='text-sm'>Available Balance</p>
+            </div>
+          </div>
+          <div  className='grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+            <div className='grid gap-1'>
+              <h2 className='text-lg font-semibold'>Total USDT Balance</h2>
+            </div>
+            <div className='grid gap-2'>
+              <div className='flex items-center gap-2'>
+                <span className='font-medium text-xl'>$</span>
+                <h1 className='font-bold text-2xl'>0.00</h1>
+              </div>
+              <p className='text-sm'>Available Balance</p>
+            </div>
+          </div>
+          
+
+      </div>
+    )
+}
+
+export default Card
