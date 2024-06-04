@@ -17,12 +17,12 @@ export const sidebar: SidebarItem[] = [
         icon:  overIcon
     },
     {
-        name: 'Transactions',
-        path: '/payment',
+        name: 'Transaction',
+        path: '/transaction',
         icon: paymentIcon
     },
     {
-        name: 'Packages',
+        name: 'Package',
         path: '/package',
         icon: companyIcon
     },

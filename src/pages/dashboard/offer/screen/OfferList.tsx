@@ -4,7 +4,7 @@ interface Props {
     
 }
 
-const Packages: React.FC<Props> = () => {
+const OfferList: React.FC<Props> = () => {
     return (
         <div>
             
@@ -12,4 +12,4 @@ const Packages: React.FC<Props> = () => {
     )
 }
 
-export default Packages
+export default OfferList
