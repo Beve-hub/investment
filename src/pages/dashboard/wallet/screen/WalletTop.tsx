@@ -12,12 +12,7 @@ const WalletTop = () => {
     return (
         <div className='flex justify-between pb-[3rem] max-w-screen'>
         <div className='flex gap-2'>
-            <p className='text-2xl font-bold'>Welcome,</p>
-            <div>
-                <p className='text-2xl font-semibold'>Victor</p> 
-               
-                            
-            </div>
+            <p className='text-2xl font-bold'>Wallet</p>           
         </div>
 
         <div className='items-center gap-6 md:flex hidden'>            

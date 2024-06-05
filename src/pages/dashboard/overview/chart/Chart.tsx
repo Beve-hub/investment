@@ -1,29 +1,37 @@
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Chart = () => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.livecoinwatch.com/static/lcw-widget.js';
-        script.defer = true;
-        document.body.appendChild(script);
-    
-        return () => {
-          document.body.removeChild(script);
-        };
-      }, []);
-    
-      return (
-        <div
-          className='h-[10rem]'
-          lcw-base="USD"
-          lcw-d-head="true"
-          lcw-d-name=""
-          lcw-d-code="true"
-          lcw-d-icon="true"
-          lcw-color-tx="#1f2434"
-          lcw-color-bg="#ffffff"
-          lcw-border-w="1"
-        ></div>
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.livecoinwatch.com/static/lcw-widget.js';
+    script.defer = true;
+
+    if (widgetRef.current) {
+      widgetRef.current.appendChild(script);
+    }
+
+    return () => {
+      if (widgetRef.current) {
+        widgetRef.current.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className="livecoinwatch-widget-3"
+      ref={widgetRef}
+      data-lcw-base="USD"
+      data-lcw-d-head="true"
+      data-lcw-d-name="true"
+      data-lcw-d-code="true"
+      data-lcw-d-icon="true"
+      data-lcw-color-tx="#ffffff"
+      data-lcw-color-bg="#1f2434"
+      data-lcw-border-w="1"
+    ></div>
       );
     };
 

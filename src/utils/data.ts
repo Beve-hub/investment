@@ -27,9 +27,10 @@ export const sidebar: SidebarItem[] = [
         icon: companyIcon
     },
     {
-        name: 'Wallet',
-        path: '/wallet',
+        name: 'Profile',
+        path: '/setting',
         icon: walletIcon
     },
+   
    
 ]

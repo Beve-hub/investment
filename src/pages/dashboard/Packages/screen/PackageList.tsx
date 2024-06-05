@@ -13,12 +13,12 @@ const PackageList = () => {
     return (
         <div className='mt-[5rem]'>
             <div className="grid md:grid-cols-4 gap-4 mx-4">
-                <div className="border h-[24rem]">
+                <div className="border h-[24rem] bg-[#12121210]">
                     <div className="flex justify-between px-4">
                     <p className="text-2xl font-semibold pt-4">Basic</p>
-                    <div className="bg-[#a80000] text-white p-2">
-                            <p className='text-sm'>80%</p>
-                            <p className='text-sm'>Return</p>
+                    <div className="bg-[--bg-color] text-white p-2">
+                            <p className='text-xs'>80%</p>
+                            <p className='text-xs'>Return</p>
                         </div>
                     </div>
                     <div className='p-3 mt-10'>
@@ -36,17 +36,17 @@ const PackageList = () => {
                         </div>
                     </div>
                       <div className='flex items-center justify-center mt-8'>
-                      <Button type="primary">Invest Now</Button>
+                      <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
                       </div>
                     
                 </div>
 
-                <div className="border h-[24rem]">
+                <div className="border h-[24rem] bg-[#12121210]">
                     <div className="flex justify-between px-4">
                     <p className="text-2xl font-semibold pt-4">Gold</p>
-                        <div className="bg-[--button-color] p-2">
-                            <p className='text-sm'>109%</p>
-                            <p className='text-sm'>Return</p>
+                        <div className="bg-[--bg-color] p-2 text-white">
+                            <p className='text-xs'>109%</p>
+                            <p className='text-xs'>Return</p>
                         </div>
                     </div>
                     <div className='p-3 mt-10'>
@@ -64,17 +64,17 @@ const PackageList = () => {
                         </div>
                     </div>
                       <div className='flex items-center justify-center mt-8'>
-                      <Button type="primary">Invest Now</Button>
+                      <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
                       </div>
                     
                 </div>
 
-                <div className="border h-[24rem]">
+                <div className="border h-[24rem] bg-[#12121210]">
                     <div className="flex justify-between px-4">
                     <p className="text-2xl font-semibold pt-4">Diamond</p>
-                    <div className="bg-[#00a830] text-white p-2">
-                            <p className='text-sm'>+209%</p>
-                            <p className='text-sm'>Return</p>
+                    <div className="bg-[--bg-color] text-white p-2">
+                            <p className='text-xs'>+209%</p>
+                            <p className='text-xs'>Return</p>
                         </div>
                     </div>
                     <div className='p-3 mt-10'>
@@ -88,21 +88,21 @@ const PackageList = () => {
                                                        <img src={BTC} alt=''  className='w-[1.2rem]'/>
                             <img src={USDC} alt=''  className='w-[1.2rem]'/>   
                             <img src={USDT} alt=''  className='w-[1.2rem]'/>  
-                            <img src={ETH} alt=''  className='w-[1.2rem]'/>   
+                            <img src={ETH} alt=''  className='w-[1rem]'/>   
                         </div>
                     </div>
                       <div className='flex items-center justify-center mt-5'>
-                      <Button type="primary">Invest Now</Button>
+                      <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
                       </div>
                     
                 </div>
 
-                <div className="border h-[24rem]">
+                <div className="border h-[24rem] bg-[#12121210]">
                     <div className="flex justify-between px-4">
                     <p className="text-2xl font-semibold pt-4">Platinum</p>
-                        <div className="bg-[#00a830] text-white p-2">
-                            <p className='text-sm'>+519%</p>
-                            <p className='text-sm'>Return</p>
+                        <div className="bg-[--bg-color] text-white p-2">
+                            <p className='text-xs'>+519%</p>
+                            <p className='text-xs'>Return</p>
                         </div>
                     </div>
                     <div className='p-3 mt-10'>
@@ -114,12 +114,12 @@ const PackageList = () => {
                         <p className='text-xs py-1'>Containing Crypto</p>
                         <div className='flex gap-1'>                           
                             <img src={BTC} alt=''  className='w-[1.2rem]'/>  
-                            <img src={ETH} alt=''  className='w-[1.2rem]'/>  
+                            <img src={ETH} alt=''  className='w-[1rem]'/>  
                             <img src={USDT} alt=''  className='w-[1.2rem]'/>                           
                         </div>
                     </div>
                       <div className='flex items-center justify-center mt-6'>
-                      <Button type="primary">Invest Now</Button>
+                      <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
                       </div>
                     
                 </div>

@@ -1,15 +1,11 @@
-import React from 'react'
+import Settings from "./screen/Settings"
 
-interface Props {
-    
-}
-
-const Profile: React.FC<Props> = () => {
+const Profile = () => {
     return (
-        <div>
-            
-        </div>
-    )
+        <section className='md:ml-[16rem] max-w-[70rem]  my-6 absolute top-0 w-full h-screen'>
+            <Settings/>
+        </section>
+    )   
 }
 
 export default Profile

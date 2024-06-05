@@ -10,7 +10,7 @@ const TransTop = () => {
         setIcon(!icon);
     }
     return (
-        <div className='flex justify-between pb-[3rem] max-w-screen'>
+        <div className='flex justify-between pt-[3rem] pb-[5rem] max-w-screen'>
         <div className='flex gap-2'>
             <p className='text-2xl font-bold'>Transaction History</p>           
         </div>
