@@ -4,7 +4,7 @@
 
 
 :root {
-  font-family: poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:  Ledger,system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,7 +20,8 @@
   --base-color: #750037;
   --bases-color: #75003780;
   --base-colors: #75003730;
-
+  --color-primary: linear-gradient(to right, hsl(200, 33%, 20%), #FFC700)
+  
   
 
 }

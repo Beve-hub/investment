@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: 'Ledger, ui-serif', // Adds a new `font-display` class
+      }
+    },
   },
   plugins: [],
 }
