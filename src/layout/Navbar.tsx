@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
  
 const Navbar = () => {
     const [nav, setNav ] = useState<boolean>(true);
-    const flexBetween = 'flex items-center justify-between';
+    const flexBetween = 'flex items-center justify-around';
    
 
     const handleNav = (): void => {
@@ -38,33 +38,29 @@ const Navbar = () => {
 
 <ul className={`${flexBetween} mx-[8rem] w-[35rem] `}>
    
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+    <li className='text-[#151515] font-display  transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/about"  >
             About Us
             
         </NavLink>
     </li>
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/strategies">
             Strategies           
         </NavLink>
     </li>
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/team" >
             Our Team
         </NavLink>
     </li>
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/commentary" >
-            Commentary
-        </NavLink>
-    </li>
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+   
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/resource" >
             Resources
         </NavLink>
     </li>
-    <li className=' transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/contact" >
            Contact Us
         </NavLink>
@@ -80,36 +76,32 @@ const Navbar = () => {
                               
 
 <ul className=' grid justify-start ml-20 gap-6 font-medium mt-20'>
-     <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/about"  >
+<li className='text-[#151515] font-display  transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+        <a href="/about"  >
             About Us
             
-        </NavLink>
+        </a>
     </li>
-    <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/strategies">
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+        <a href="/strategies">
             Strategies           
-        </NavLink>
+        </a>
     </li>
-    <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/team" >
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 mt-2 border-[var(--button-color)] cursor-pointer'>
+        <a href="/team" >
             Our Team
-        </NavLink>
+        </a>
     </li>
-    <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/team" >
-            Commentary
-        </NavLink>
-    </li>
-    <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/team" >
+   
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+        <a href="/resource" >
             Resources
-        </NavLink>
+        </a>
     </li>
-    <li className='text-[--text-extra] transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
-        <NavLink to="/team" >
+    <li className='text-[#151515] font-display transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
+        <a href="/contact" >
            Contact Us
-        </NavLink>
+        </a>
     </li>
 </ul>                  
 

@@ -1,11 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import TeamTop from "./TeamTop";
 import Meet from "../../Hero screen/screen/Meet";
 import Footer from "../../Hero screen/screen/Footer";
+import Left from "../../../../assets/right.svg"
 
 const BodyDetails = () => {
     const location = useLocation();
     const { item } = location.state || {};
+     const navigate = useNavigate();
+      
+     const handleClick = () => {
+        navigate('/contact')
+     }
     return (
         <section className=" grid bg-[--text-extra] items-center justify-center">
             <TeamTop/>
@@ -26,7 +32,9 @@ const BodyDetails = () => {
                                    
                                  <p className="font-display">{item.contact1}</p>
                                  <p className="font-display">{item.contact1}</p>
+                                 <button onClick={handleClick} className="py-6 flex items-center justify-center hover:text-[#12121270]"> <span>Send Message </span> <img src={Left} alt="" className="w-[1rem]"/> </button>
                                 </div>
+                                
                                 
                 </div>
                 <img src={item.image} alt={item.name} className="w-[30rem] object-cover  " />

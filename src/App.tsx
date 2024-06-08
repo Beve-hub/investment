@@ -11,6 +11,11 @@ import About from './pages/landingPage/about/About';
 import Strategies from './pages/landingPage/strategies/Strategies';
 import Team from './pages/landingPage/team/Team';
 import BodyDetails from './pages/landingPage/team/screen/BodyDetails';
+import Contact from './pages/landingPage/contact/Contact';
+import Resource from './pages/landingPage/resources/Resource';
+import Login from './pages/auth/login/Login';
+import Invest from './pages/auth/register/Invest';
+
 
 
 
@@ -33,6 +38,10 @@ function App() {
           <Route path='/strategies' element={<Strategies/>}/>
           <Route path='/team' element={<Team/>}/>
           <Route path='/bodyDetails' element={<BodyDetails/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/resource' element={<Resource/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Invest/>}/>
         </Routes>
     </Router>
   )

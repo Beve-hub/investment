@@ -18,7 +18,7 @@ const NavbarWrapper = ({ children }: Props) => {
         const restrictedPaths = [
             '/login',
             '/register',
-            '/reg',
+   
             
             
         ];
@@ -27,6 +27,7 @@ const NavbarWrapper = ({ children }: Props) => {
             '/overview',           
             '/transaction',
             '/package',
+            '/setting'
             
         ];
 
