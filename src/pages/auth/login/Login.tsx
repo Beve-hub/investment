@@ -77,7 +77,7 @@ const Login = () => {
                 </div>    
 
                 <div>
-                    <div className='grid gap-4'>
+                    <div className='grid gap-4 mb-6'>
                     <p className='font-bold font-display text-xl'>Open an HL account</p>
                     <div>                    
                     <p className='text-sm '>Don't have an account yet? let get you started and help you invest with us.   </p>

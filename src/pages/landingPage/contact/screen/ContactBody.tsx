@@ -64,7 +64,12 @@ const ContactBody = () => {
                             <textarea id="message"  placeholder="Type Something" className="font-display shadow appearance-none border   py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[10rem]"/>                            
                     </div> 
                     </div>
-                    
+                    <div className="">
+                        <button className="py-3 bg-[#121212] w-[10rem]  text-white flex justify-center items-center">
+                            Submit
+                        </button>
+                      
+                        </div> 
                 </div>
                 
             </div>

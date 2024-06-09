@@ -175,8 +175,8 @@ const Invest = () => {
                      <button  > Submit</button>                
                         </div>
                 <div className='grid gap-4 mb-4'>                    
-                    <div>                    
-                    <p className='text-sm text-wrap'>Already have an account yet? let get you started and help you invest with us.   </p>
+                    <div className='flex items-center justify-center'>                    
+                    <p className='text-sm text-wrap'>Already have an account yet?   </p>
                     <button onClick={handleClick} className='text-[#1242bb] flex item-center  '><span>Log in </span><span className='mt-1'><img src={left} alt='' className='w-[1rem]'/></span></button>
                     </div>
                     </div>
