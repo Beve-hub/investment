@@ -13,13 +13,16 @@ const Invest = () => {
     const handleClick = () => {
         navigate('/login')
     }; 
+    const handleSubmit = () => {
+        navigate('/validId')
+    }; 
 
     return (
         <section className='grid justify-center items-center w-screen h-[40rem] px-[1rem]'>
             <div className='border-b-2 border-[--bg-color]'>
                 <img src={logo} alt='' className='w-[3.5rem] py-4'/>
             </div>
-            <form className="bg-[#ffff]  ">
+            <form onSubmit={handleSubmit}  className="bg-[#ffff]  ">
                 <div className="bg-[--bg-color] p-4 my-10 flex items-center justify-between ">
                     <p className="font-bold font-display text-xl text-white">Invest with Us </p>
                     
@@ -43,8 +46,7 @@ const Invest = () => {
                     <input
                        id="firstName"
                        name="firstName"
-                       type="text"
-                       required
+                       type="text"                     
                        className=" border-l-4 border-l-[--bg-color] block w-[20rem] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                        placeholder="Enter email"
          
@@ -110,18 +112,27 @@ const Invest = () => {
 
                 <div className="grid gap-4 ">
                 <div>
-                    <label htmlFor="post">Post Code</label>
+                    <label htmlFor="address">Address</label>
                     <input
-                       id="post"
-                       name="post"
-                       type="text"
-                       required
+                       id="address"
+                       name="address"
+                       type="text"                     
                        className=" border-l-4 border-l-[--bg-color] block w-[20rem] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                        placeholder="Enter Post code"
          
                      />
                 </div>
-
+                <div>
+                    <label htmlFor="post">Post Code</label>
+                    <input
+                       id="post"
+                       name="post"
+                       type="text"                  
+                       className=" border-l-4 border-l-[--bg-color] block w-[20rem] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                       placeholder="Enter Post code"
+         
+                     />
+                </div>
                 <div className="grid gap-2">
                 <div>
                     <label htmlFor="state">State</label>
@@ -150,7 +161,7 @@ const Invest = () => {
                      name="password"
                      type="password"
                      autoComplete="current-password"
-                     required
+                  
                      className=" border-l-4 border-l-[--bg-color] block w-[20rem] px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"           
                      placeholder="Password"
          
@@ -174,10 +185,17 @@ const Invest = () => {
                 <div className='bg-[--button-color] h-[2.5rem] w-[20rem] flex justify-center my-4'>
                      <button  > Submit</button>                
                         </div>
-                <div className='grid gap-4 mb-4'>                    
-                    <div className='flex items-center justify-center'>                    
-                    <p className='text-sm text-wrap'>Already have an account yet?   </p>
+                <div className='grid gap-4 mb-4'>
+                <div className='grid gap-4 mb-6'>
+                    <p className='font-bold font-display text-xl'>Open an HL account</p>
+                    <div>                    
+                    <p className='text-sm '>Already have an account yet?  Provide your details and continue to invest.   </p>
                     <button onClick={handleClick} className='text-[#1242bb] flex item-center  '><span>Log in </span><span className='mt-1'><img src={left} alt='' className='w-[1rem]'/></span></button>
+                    </div>
+                    </div>                    
+                    <div className='flex items-center justify-center'>                    
+                    <p className='text-sm text-wrap'>  </p>
+                   
                     </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ const Navbar = () => {
 
                 <div className='flex items-center'>
                 <div onClick={handleNav} className='block md:hidden ml-4 '>
-                 {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
+                 {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1 ' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
                  </div>
                  <div>
                  <a href='/'>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className='item-center justify-between sm:flex hidden'>                
 
 <ul className={`${flexBetween} mx-[8rem] w-[35rem] `}>
-   
+
     <li className='text-[#151515] font-display  transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <NavLink to="/about"  >
             About Us
@@ -65,6 +65,11 @@ const Navbar = () => {
            Contact Us
         </NavLink>
     </li>
+    <li className='text-[#151515] font-display transition duration-500 cursor-pointer bg-[var(--button-color)] py-2 px-6'>
+        <NavLink to="/login" >
+           Login
+        </NavLink>
+    </li>
 </ul>    
 </div>
                 </div>
@@ -72,10 +77,9 @@ const Navbar = () => {
                 
                 
                 </div>
-                <div className={!nav ? 'fixed right-0 top-0 w-[80%] h-full  border-r-gray-900 bg-[#989898] z-10 ease-in-out duration-500': 'fixed left-[-400%]'}>
+                <div className={!nav ? 'fixed right-0 top-0 w-[60%] h-full  border-r-gray-900 bg-[#989898] z-10 ease-in-out duration-500': 'fixed left-[-400%]'}>
                               
-
-<ul className=' grid justify-start ml-20 gap-6 font-medium mt-20'>
+               <ul className=' grid justify-start ml-20 gap-6 font-medium mt-20'>
 <li className='text-[#151515] font-display  transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <a href="/about"  >
             About Us
@@ -103,6 +107,11 @@ const Navbar = () => {
            Contact Us
         </a>
     </li>
+    <li className='text-[#151515] font-display transition duration-500  bg-[var(--button-color)] py-2 px-6 cursor-pointer'>
+        <a href="/login" >
+          Log in
+        </a>
+    </li>        
 </ul>                  
 
     

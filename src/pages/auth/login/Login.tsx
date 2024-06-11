@@ -81,7 +81,7 @@ const Login = () => {
                     <p className='font-bold font-display text-xl'>Open an HL account</p>
                     <div>                    
                     <p className='text-sm '>Don't have an account yet? let get you started and help you invest with us.   </p>
-                    <button onClick={handleClick} className='text-[#1242bb] flex item-center  '><span>Open account </span><span className='mt-1'><img src={left} alt='' className='w-[1rem]'/></span></button>
+                    <button onClick={handleClick} className='text-[#1242bb] flex item-center  '><span>Invest With Us </span><span className='mt-1'><img src={left} alt='' className='w-[1rem]'/></span></button>
                     </div>
                     </div>
                     

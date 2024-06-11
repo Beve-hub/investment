@@ -15,6 +15,7 @@ import Contact from './pages/landingPage/contact/Contact';
 import Resource from './pages/landingPage/resources/Resource';
 import Login from './pages/auth/login/Login';
 import Invest from './pages/auth/register/Invest';
+import ValidId from './pages/auth/register/ValidId';
 
 
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='/resource' element={<Resource/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Invest/>}/>
+          <Route path='/validId' element={<ValidId/>}/>
         </Routes>
     </Router>
   )
