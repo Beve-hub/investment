@@ -1,12 +1,4 @@
 import { Button } from 'antd'
-import DOD from '../../../../assets/dogecoin-doge-logo.svg'
-import SHB from '../../../../assets/shiba-inu-shib-logo.svg'
-import USDT from '../../../../assets/tether-usdt-logo.svg'
-import USDC from '../../../../assets/usd-coin-usdc-logo.svg'
-import BTC from '../../../../assets/btc-logo.svg'
-import ETH from '../../../../assets/ethereum-eth-logo.svg'
-import TRN from '../../../../assets/tron-trx-logo.svg'
-import SOl from '../../../../assets/solana-sol-logo.svg'
 
 
 const PackageList = () => {
@@ -23,19 +15,14 @@ const PackageList = () => {
                     </div>
                     <div className='p-3 mt-10'>
                         <p className='text-md font-semibold'>Risk Level: <span className='text-red-500'>Low</span> </p>
-                        <p className='text-sm'>Low Risk Scip Plan </p>
+                       
                     </div>
-                    <p className='pl-3 text-sm'>Invest in low risk scip to maximize the return</p>
-                    <div className='py-6 px-3 grid justify-end'>
-                        <p className='text-xs py-1'>Containing Crypto</p>
-                        <div className='flex gap-1'>
-                            <img src={DOD} alt=''  className='w-[1.2rem]'/>
-                            <img src={SHB} alt=''  className='w-[1.2rem]'/>  
-                            <img src={TRN} alt=''  className='w-[1.2rem]'/>  
-                            <img src={SOl} alt=''  className='w-[1.2rem]'/>                             
-                        </div>
+                    <div className='mt-4 grid gap-2'>
+                    <p className='pl-3 text-sm'> - Stock</p>
+                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
+                    <p className='pl-3 text-sm'> - Energy Company</p>
                     </div>
-                      <div className='flex items-center justify-center mt-8'>
+                      <div className='flex items-center justify-center mt-[6rem]'>
                       <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
                       </div>
                     
@@ -51,19 +38,15 @@ const PackageList = () => {
                     </div>
                     <div className='p-3 mt-10'>
                         <p className='text-md font-semibold'>Earning Level: <span className='text-yellow-500'>Medium</span> </p>
-                        <p className='text-sm'>High yield Scip Plan </p>
+                    
                     </div>
-                    <p className='pl-3 text-sm'>Invest in High yield Scip to get high return</p>
-                    <div className='py-6 px-3 grid justify-end'>
-                        <p className='text-xs py-1'>Containing Crypto</p>
-                        <div className='flex gap-1'>
-                            <img src={DOD} alt=''  className='w-[1.2rem]'/>
-                            <img src={SHB} alt=''  className='w-[1.2rem]'/>
-                            <img src={USDC} alt=''  className='w-[1.2rem]'/>   
-                            <img src={SOl} alt=''  className='w-[1.2rem]'/>    
-                        </div>
+                    <div className='mt-4 grid gap-2'>
+                    <p className='pl-3 text-sm'> - Mutual Funds</p>
+                    <p className='pl-3 text-sm'> - Stock</p>
+                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
+                    <p className='pl-3 text-sm'> - Energy Company</p>                   
                     </div>
-                      <div className='flex items-center justify-center mt-8'>
+                      <div className='flex items-center justify-center mt-[4.2rem]'>
                       <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
                       </div>
                     
@@ -79,19 +62,16 @@ const PackageList = () => {
                     </div>
                     <div className='p-3 mt-10'>
                         <p className='text-md font-semibold'>Earning Level: <span className='text-green-500'>High</span> </p>
-                        <p className='text-sm'>LONG-TERM HODLER PLANS </p>
+                     
                     </div>
-                    <p className='pl-3 text-sm'>Top Crypto to invest for long term with low risk.</p>
-                    <div className='py-6 px-3 grid justify-end'>
-                        <p className='text-xs py-1'>Containing Crypto</p>
-                        <div className='flex gap-1'>
-                                                       <img src={BTC} alt=''  className='w-[1.2rem]'/>
-                            <img src={USDC} alt=''  className='w-[1.2rem]'/>   
-                            <img src={USDT} alt=''  className='w-[1.2rem]'/>  
-                            <img src={ETH} alt=''  className='w-[1rem]'/>   
-                        </div>
+                    <div className='mt-4 grid gap-2'>
+                    <p className='pl-3 text-sm'> - Mutual Funds</p>
+                    <p className='pl-3 text-sm'> - Stock</p>
+                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
+                    <p className='pl-3 text-sm'> - Real Estate</p>  
+                    <p className='pl-3 text-sm'> - Treasury</p>                   
                     </div>
-                      <div className='flex items-center justify-center mt-5'>
+                      <div className='flex items-center justify-center mt-[2.5rem]'>
                       <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
                       </div>
                     
@@ -107,18 +87,18 @@ const PackageList = () => {
                     </div>
                     <div className='p-3 mt-10'>
                         <p className='text-md font-semibold'>Earning Level: <span className='text-green-500'>Top</span> </p>
-                        <p className='text-sm'>Top Crypto Performers </p>
+                       
                     </div>
-                    <p className='pl-3 text-sm'>Invest & Subscribe in earning high returns of historical data.</p>
-                    <div className='py-6 px-3 grid justify-end'>
-                        <p className='text-xs py-1'>Containing Crypto</p>
-                        <div className='flex gap-1'>                           
-                            <img src={BTC} alt=''  className='w-[1.2rem]'/>  
-                            <img src={ETH} alt=''  className='w-[1rem]'/>  
-                            <img src={USDT} alt=''  className='w-[1.2rem]'/>                           
-                        </div>
+                    <div className='mt-4 grid grid-cols-2 gap-2'>
+                    <p className='pl-3 text-sm'> - ETF </p>
+                    <p className='pl-3 text-sm'> - Stock</p>
+                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
+                    <p className='pl-3 text-sm'> - Real Estate</p>                     
+                    <p className='pl-3 text-sm'> - Mutual Funds</p>                        
+                    <p className='pl-3 text-sm'> - Treasury</p> 
+                    <p className='pl-3 text-sm text-balance'> - Energy Company</p>                 
                     </div>
-                      <div className='flex items-center justify-center mt-6'>
+                      <div className='flex items-center justify-center mt-12'>
                       <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
                       </div>
                     

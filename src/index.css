@@ -38,7 +38,3 @@ body {
   @apply   font-bold    ;
 }
 
-.active img {
-  filter: invert(81%) sepia(79%) saturate(6528%) hue-rotate(320deg) brightness(90%) contrast(90%);
-
-}

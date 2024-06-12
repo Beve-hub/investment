@@ -28,7 +28,8 @@ const NavbarWrapper = ({ children }: Props) => {
             '/overview',           
             '/transaction',
             '/package',
-            '/setting'
+            '/setting',
+            '/packageForm'
             
         ];
 

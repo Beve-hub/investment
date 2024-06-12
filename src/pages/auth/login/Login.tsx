@@ -8,6 +8,10 @@ const Login = () => {
         navigate('/register')
     }; 
 
+    const handleSubmit = () => {
+        navigate('/overview')
+    }
+
     return (
         <section className='grid justify-center items-center w-screen h-[40rem] px-[1rem]'>
             <div className='border-b-2 border-[--bg-color]'>
@@ -20,7 +24,7 @@ const Login = () => {
                 <div className='grid md:grid-cols-2 items-base justify-center gap-8'>
 
                     
-                <div className="grid gap-7 border-r-2">
+                <form onClick={handleSubmit} className="grid gap-7 border-r-2">
                 <div>
                     <label htmlFor="email">Email</label>
                     <input
@@ -74,7 +78,7 @@ const Login = () => {
                 <p>Keep you safe and secured</p>
                 </div>
                 
-                </div>    
+                </form>    
 
                 <div>
                     <div className='grid gap-4 mb-6'>

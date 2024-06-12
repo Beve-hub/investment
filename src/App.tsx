@@ -44,6 +44,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Invest/>}/>
           <Route path='/validId' element={<ValidId/>}/>
+          <Route path='/packageForm' element={<PackageForm/>}/>
         </Routes>
     </Router>
   )
