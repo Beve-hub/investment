@@ -20,9 +20,9 @@ const Card = () => {
             </div>
           </div>
 
-          <div  className='border-r-[5px] border-[#fc9c00] bg-[#ffcd7e] grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div  className='border-r-[5px] border-[#e58d00] bg-[#f1b556] grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
-            <div className='w-[22px] h-[22px] bg-[#c675183f] p-1 rounded-sm' >
+            <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
               <h2 className='text-md font-semibold '>Total Gold Balance</h2>
@@ -36,7 +36,7 @@ const Card = () => {
             </div>
           </div>
 
-          <div  className='border-r-[5px] border-[#000000] bg-[#363636]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div  className='border-r-[5px] border-[#000000] bg-[#3b3b3b]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
             <div className='w-[22px] h-[22px] bg-[#fffafa] p-1 rounded-sm items-center' >
             <img src={Wallet} alt='' className='w-[16px]' />
@@ -52,9 +52,9 @@ const Card = () => {
             </div>
           </div>
 
-          <div  className='border-r-[5px] bg-[#23eead] border-[#00c451]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div  className='border-r-[5px] bg-[#14e7a4] border-[#009889]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
-            <div className='w-[22px] h-[22px] bg-[#23eead44] p-1 rounded-sm' >
+            <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
               <h2 className='text-md font-semibold'>Total Platinum Balance</h2>

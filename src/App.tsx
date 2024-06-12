@@ -16,6 +16,7 @@ import Resource from './pages/landingPage/resources/Resource';
 import Login from './pages/auth/login/Login';
 import Invest from './pages/auth/register/Invest';
 import ValidId from './pages/auth/register/ValidId';
+import PackageForm from './pages/dashboard/Packages/screen/PackageForm';
 
 
 
