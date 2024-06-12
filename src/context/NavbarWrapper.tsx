@@ -19,7 +19,7 @@ const NavbarWrapper = ({ children }: Props) => {
             '/login',
             '/register',
             '/validId',
-   
+            '/deposit'
             
             
         ];
