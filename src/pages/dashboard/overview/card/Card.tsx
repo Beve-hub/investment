@@ -28,6 +28,7 @@ const Card = () => {
 
     return (
         <div className='grid items-center justify-between gap-6 md:grid-cols-4'>
+
         <div onClick={handleBasic} className=' grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[#025483] border-r-4 border-[#003e62]  w-[15rem] cursor-pointer'>
             <div className='flex gap-1 items-center'>
               <div className='w-[22px] h-[22px] bg-[#fff] p-1 rounded-sm' >
@@ -45,7 +46,7 @@ const Card = () => {
             </div>
           </div>
 
-          <div onClick={handleGold}  className='border-r-[5px] border-[#e58d00] bg-[#f1b556] grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div onClick={handleGold}  className='border-r-[5px] bg-[#fac165] border-[#e58d00]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
             <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
@@ -61,7 +62,7 @@ const Card = () => {
             </div>
           </div>
 
-          <div onClick={handleDiamond} className='border-r-[5px] border-[#000000] bg-[#3b3b3b]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div onClick={handleDiamond} className='border-r-[5px] border-[#350163] bg-[#6633b9]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
             <div className='w-[22px] h-[22px] bg-[#fffafa] p-1 rounded-sm items-center' >
             <img src={Wallet} alt='' className='w-[16px]' />
@@ -77,7 +78,7 @@ const Card = () => {
             </div>
           </div>
 
-          <div onClick={handlePlatinum} className='border-r-[5px] bg-[#14e7a4] border-[#009889]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
+          <div onClick={handlePlatinum} className='border-r-[5px] bg-[#0dfeb2] border-[#009889]  grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[--layer-color] w-[15rem]'>
             <div className='flex items-center gap-1'>
             <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
@@ -98,7 +99,6 @@ const Card = () => {
           <GoldModal  showGold={showGold} onClose={() => setShowGold(false)}  />
           <DiamondModal showDiamond={showDiamond} onClose={() => setShowDiamond(false)}  />
           <PlatinumModal  showPlatinum={showPlatinum} onClose={() => setShowPlatinum(false)}  />
-
 
       </div>
     )

@@ -28,7 +28,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className='h-screen bg-[]'>
+    <div className='h-screen absolute top-0'>
       <div className="flex p-2 items-center">   
       <div onClick={handleBar}  className=" block md:hidden ml-4 ">
           {nav ? 

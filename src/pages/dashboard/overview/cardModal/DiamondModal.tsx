@@ -15,7 +15,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
             <div className='flex justify-center'>
             <div className='grid py-[6rem] px-6 items-center justify-between gap-6 md:grid-cols-3'>
 
-<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#000]  w-[15rem] cursor-pointer'>
+<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#350163]  w-[15rem] cursor-pointer'>
 
 
 <div className='flex gap-1 items-center'>
@@ -34,7 +34,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#000]  w-[15rem] cursor-pointer'>
+<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#350163]  w-[15rem] cursor-pointer'>
 
 
 <div className='flex gap-1 items-center'>
@@ -53,7 +53,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#000]  w-[15rem] cursor-pointer'>
+<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#350163]  w-[15rem] cursor-pointer'>
 
 
 <div className='flex gap-1 items-center'>
@@ -72,7 +72,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#000]  w-[15rem] cursor-pointer'>
+<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#350163]  w-[15rem] cursor-pointer'>
 
 
 <div className='flex gap-1 items-center'>
@@ -91,7 +91,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#000]  w-[15rem] cursor-pointer'>
+<div  className=' grid justify-start px-4 py-6 rounded-2xl gap-8 border border-r-4 border-[#350163]  w-[15rem] cursor-pointer'>
 
 
 <div className='flex gap-1 items-center'>
