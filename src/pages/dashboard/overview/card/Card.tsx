@@ -67,14 +67,14 @@ const Card = () => {
             <div className='w-[22px] h-[22px] bg-[#fffafa] p-1 rounded-sm items-center' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
-              <h2 className='text-md font-semibold text-white'>Total Diamond Balance</h2>
+              <h2 className='text-md font-semibold'>Total Diamond Balance</h2>
             </div>
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
-                <span className='font-medium text-xl text-white'>$</span>
-                <h1 className='font-bold text-2xl text-white'>0.00</h1>
+                <span className='font-medium text-xl '>$</span>
+                <h1 className='font-bold text-2xl '>0.00</h1>
               </div>
-              <p className='text-sm text-white'>Available Balance</p>
+              <p className='text-sm '>Available Balance</p>
             </div>
           </div>
 
