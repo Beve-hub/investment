@@ -17,6 +17,8 @@ import Login from './pages/auth/login/Login';
 import Invest from './pages/auth/register/Invest';
 import ValidId from './pages/auth/register/ValidId';
 import PackageForm from './pages/dashboard/Packages/screen/PackageForm';
+import Withdraw from './pages/dashboard/action/Withdraw';
+import Deposit from './pages/dashboard/action/Deposit';
 
 
 
@@ -46,6 +48,8 @@ function App() {
           <Route path='/register' element={<Invest/>}/>
           <Route path='/validId' element={<ValidId/>}/>
           <Route path='/packageForm' element={<PackageForm/>}/>
+          <Route path='/deposit' element={<Deposit/>}/>
+          <Route path='/withdraw' element={<Withdraw/>}/>
         </Routes>
     </Router>
   )

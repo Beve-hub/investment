@@ -19,7 +19,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 
 
 <div className='flex gap-1 items-center'>
-  <div className='w-[22px] h-[22px] bg-[#000] p-1 rounded-sm' >
+  <div className='w-[22px] h-[22px] bg-[#350163] p-1 rounded-sm' >
   <img src={Wallet} alt='' className='w-[16px] filter invert' />
   </div>
   
@@ -38,7 +38,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 
 
 <div className='flex gap-1 items-center'>
-  <div className='w-[22px] h-[22px] bg-[#000] p-1 rounded-sm' >
+  <div className='w-[22px] h-[22px] bg-[#350163] p-1 rounded-sm' >
   <img src={Wallet} alt='' className='w-[16px] filter invert' />
   </div>
   
@@ -57,7 +57,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 
 
 <div className='flex gap-1 items-center'>
-  <div className='w-[22px] h-[22px] bg-[#000] p-1 rounded-sm' >
+  <div className='w-[22px] h-[22px] bg-[#350163] p-1 rounded-sm' >
   <img src={Wallet} alt='' className='w-[16px] filter invert' />
   </div>
   
@@ -76,7 +76,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 
 
 <div className='flex gap-1 items-center'>
-  <div className='w-[22px] h-[22px] bg-[#000] p-1 rounded-sm' >
+  <div className='w-[22px] h-[22px] bg-[#350163] p-1 rounded-sm' >
   <img src={Wallet} alt='' className='w-[16px] filter invert' />
   </div>
   
@@ -95,7 +95,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 
 
 <div className='flex gap-1 items-center'>
-  <div className='w-[22px] h-[22px] bg-[#000] p-1 rounded-sm' >
+  <div className='w-[22px] h-[22px] bg-[#350163] p-1 rounded-sm' >
   <img src={Wallet} alt='' className='w-[16px] filter invert' />
   </div>
   
@@ -110,10 +110,9 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-       </div>
-            </div>
-            
-            </div>
+      </div>
+     </div>            
+    </div>
         </div>
     )
 }
