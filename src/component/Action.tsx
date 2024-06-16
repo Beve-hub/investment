@@ -13,9 +13,9 @@ const Action = () => {
         setAction(!action)
     }
     return (
-        <div className='flex gap-1 justify-between  max-w-screen md:grid-cols-2'>      
+        <div className='flex gap-1 justify-between mx-6 max-w-screen md:grid-cols-2'>      
 
-       <div className='flex justify-start w-screen'>
+       <div className='flex justify-end w-screen'>
             <button onClick={toggleAction} className='bg-[--bg-color] py-2 px-6 rounded-md  flex items-center gap-2'>
             <p className='text-[--text-extra]'>Action</p>
             {!action ? <img src={rightwhite} alt=''  className='w-[10px]' /> : <img src={downwhite} alt=''  className='w-[10px]' /> }

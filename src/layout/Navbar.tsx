@@ -25,10 +25,11 @@ const Navbar = () => {
                 <div onClick={handleNav} className='block md:hidden ml-4 '>
                  {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1 ' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
                  </div>
-                 <div>
+                 <div className='flex items-center'>
                  <a href='/'>
                   <img src={Logo} alt='' className='w-[4rem] ml-[3rem] hover:scale-105'/>
                   </a>
+                  <p className='font-display font-bold text-2xl'>Crownstone</p>
                  </div>
                   
                     

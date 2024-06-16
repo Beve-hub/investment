@@ -27,7 +27,7 @@ const Card = () => {
   };
 
     return (
-        <div className='grid items-center justify-between gap-6 md:grid-cols-4'>
+        <div className='grid items-center my-4 justify-between gap-6 md:grid-cols-4 '>
 
         <div onClick={handleBasic} className=' grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[#025483] border-r-4 border-[#003e62]  w-[15rem] cursor-pointer'>
             <div className='flex gap-1 items-center'>
@@ -35,7 +35,7 @@ const Card = () => {
               <img src={Wallet} alt='' className='w-[16px]' />
               </div>
               
-              <h2 className='text-md  text-white font-semibold'>Total Basic Balance</h2>
+              <h2 className='text-md  text-white font-semibold'>Basic Balance</h2>
             </div>
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
@@ -51,7 +51,7 @@ const Card = () => {
             <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
-              <h2 className='text-md font-semibold '>Total Gold Balance</h2>
+              <h2 className='text-md font-semibold '>Gold Balance</h2>
             </div>
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
@@ -67,7 +67,7 @@ const Card = () => {
             <div className='w-[22px] h-[22px] bg-[#fffafa] p-1 rounded-sm items-center' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
-              <h2 className='text-md font-semibold'>Total Diamond Balance</h2>
+              <h2 className='text-md font-semibold'> Diamond Balance</h2>
             </div>
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
@@ -83,7 +83,7 @@ const Card = () => {
             <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm' >
             <img src={Wallet} alt='' className='w-[16px]' />
               </div>
-              <h2 className='text-md font-semibold'>Total Platinum Balance</h2>
+              <h2 className='text-md font-semibold'>Platinum Balance</h2>
             </div>
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>

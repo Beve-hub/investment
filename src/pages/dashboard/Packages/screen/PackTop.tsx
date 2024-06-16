@@ -10,7 +10,7 @@ const PackTop = () => {
     }
     
     return (
-        <div className='flex justify-between py-[3rem] max-w-screen'>
+        <div className='flex justify-between py-[3rem] max-w-screen mx-4'>
         <div className='flex gap-2'>
             <p className='text-2xl font-bold'>Packages History</p>           
         </div>

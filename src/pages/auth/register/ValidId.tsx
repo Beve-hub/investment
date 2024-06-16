@@ -49,8 +49,9 @@ const ValidId = () => {
 
   return (
     <section className="grid w-screen  mt-[2rem] justify-center items-center">
-         <div className=' border-b-2 border-[--bg-color] '>
-                <img src={logo} alt='' className='w-[3.5rem] py-4'/>
+         <div className=' border-b-2 border-[--bg-color] flex items-center'>
+                <img src={logo} alt='' className='w-[4rem] py-4'/>
+                <p className='font-display font-bold text-2xl'>Crownstone</p>
             </div>
         <div className="max-w-[40rem] grid justify-center items-center my-6">
         <p className="font-bold text-2xl font-display">Upload Valid Id </p>

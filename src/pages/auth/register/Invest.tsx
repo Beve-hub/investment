@@ -19,8 +19,9 @@ const Invest = () => {
 
     return (
         <section className='grid justify-center items-center w-screen h-[40rem] px-[1rem]'>
-            <div className='border-b-2 border-[--bg-color]'>
-                <img src={logo} alt='' className='w-[3.5rem] py-4'/>
+            <div className='border-b-2 border-[--bg-color] flex  items-center'>
+                <img src={logo} alt='' className='w-[4rem] py-4'/>
+                <p className='font-display font-bold text-2xl'>Crownstone</p>
             </div>
             <form onSubmit={handleSubmit}  className="bg-[#ffff]  ">
                 <div className="bg-[--bg-color] p-4 my-10 flex items-center justify-between ">

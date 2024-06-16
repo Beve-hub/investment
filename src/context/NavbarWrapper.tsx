@@ -19,8 +19,7 @@ const NavbarWrapper = ({ children }: Props) => {
             '/login',
             '/register',
             '/validId',
-            '/deposit',
-            '/withdraw'
+            
             
         ];
 
@@ -29,7 +28,9 @@ const NavbarWrapper = ({ children }: Props) => {
             '/transaction',
             '/package',
             '/setting',
-            '/packageForm'
+            '/packageForm',
+            '/deposit',
+            '/withdraw'
             
         ];
 

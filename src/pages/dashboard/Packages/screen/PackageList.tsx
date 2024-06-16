@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-
+import { BsDot } from "react-icons/bs";
 
 const PackageList = () => {
     return (
@@ -18,9 +18,9 @@ const PackageList = () => {
                        
                     </div>
                     <div className='mt-4 grid gap-2'>
-                    <p className='pl-3 text-sm'> - Stock</p>
-                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
-                    <p className='pl-3 text-sm'> - Energy Company</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Stock</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Cryptocurrency</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot />Energy Company</p>
                     </div>
                       <div className='flex items-center justify-center mt-[6rem]'>
                       <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
@@ -41,10 +41,10 @@ const PackageList = () => {
                     
                     </div>
                     <div className='mt-4 grid gap-2'>
-                    <p className='pl-3 text-sm'> - Mutual Funds</p>
-                    <p className='pl-3 text-sm'> - Stock</p>
-                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
-                    <p className='pl-3 text-sm'> - Energy Company</p>                   
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Mutual Funds</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Stock</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Cryptocurrency</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Energy Company</p>                   
                     </div>
                       <div className='flex items-center justify-center mt-[4.2rem]'>
                       <Button type="primary" className='bg-[--bg-color]' >Invest Now</Button>
@@ -65,11 +65,11 @@ const PackageList = () => {
                      
                     </div>
                     <div className='mt-4 grid gap-2'>
-                    <p className='pl-3 text-sm'> - Mutual Funds</p>
-                    <p className='pl-3 text-sm'> - Stock</p>
-                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
-                    <p className='pl-3 text-sm'> - Real Estate</p>  
-                    <p className='pl-3 text-sm'> - Treasury</p>                   
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Mutual Funds</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Stock</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Cryptocurrency</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Real Estate</p>  
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Treasury</p>                   
                     </div>
                       <div className='flex items-center justify-center mt-[2.5rem]'>
                       <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
@@ -89,14 +89,16 @@ const PackageList = () => {
                         <p className='text-md font-semibold'>Earning Level: <span className='text-green-500'>Top</span> </p>
                        
                     </div>
-                    <div className='mt-4 grid grid-cols-2 gap-2'>
-                    <p className='pl-3 text-sm'> - ETF </p>
-                    <p className='pl-3 text-sm'> - Stock</p>
-                    <p className='pl-3 text-sm'> - Cryptocurrency</p>
-                    <p className='pl-3 text-sm'> - Real Estate</p>                     
-                    <p className='pl-3 text-sm'> - Mutual Funds</p>                        
-                    <p className='pl-3 text-sm'> - Treasury</p> 
-                    <p className='pl-3 text-sm text-balance'> - Energy Company</p>                 
+                    <div className='mt-8 '>
+                    <div className='grid grid-cols-2 gap-2'>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> ETF </p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Stock</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Cryptocurrency</p>
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Real Estate</p>                     
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Mutual Funds</p>                        
+                    <p className='pl-3 text-sm flex items-center'> <BsDot /> Treasury</p>                                    
+                    </div>
+                    <p className='pl-3 text-sm flex items-center mt-2'> <BsDot /> Energy Company</p>  
                     </div>
                       <div className='flex items-center justify-center mt-12'>
                       <Button type="primary" className='bg-[--bg-color]'>Invest Now</Button>
