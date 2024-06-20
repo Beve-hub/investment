@@ -131,7 +131,7 @@ const PackageList = () => {
                 </div>
             </div>
 
-            <BasicModal  showBasic={showBasic} onClose={() => setShowBasic(false)}  />
+          <BasicModal  showBasic={showBasic} onClose={() => setShowBasic(false)}  />
           <GoldModal  showGold={showGold} onClose={() => setShowGold(false)}  />
           <DiamondModal showDiamond={showDiamond} onClose={() => setShowDiamond(false)}  />
           <PlatinumModal  showPlatinum={showPlatinum} onClose={() => setShowPlatinum(false)}  />

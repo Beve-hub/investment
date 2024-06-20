@@ -19,6 +19,7 @@ const NavbarWrapper = ({ children }: Props) => {
             '/login',
             '/register',
             '/validId',
+            '/adminBook'
             
             
         ];

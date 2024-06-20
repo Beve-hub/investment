@@ -1,8 +1,9 @@
-import { useState } from "react";
 
-
-
-
+import { useEffect, useState } from "react";
+import { IoCopy } from "react-icons/io5";
+import { Oval } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
+import { database } from '../../../firebase';
 
 interface UserData {
     amount: string;
@@ -20,6 +21,8 @@ const Withdraw = () => {
 
     const [packagePlan, setPackagePlan] = useState<string>(''); 
     const [walletDetails, setWalletDetails] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);  
+
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -29,29 +32,17 @@ const Withdraw = () => {
         });
 
         if (name === 'amount' && value) {
-            setPackagePlan(formInput.cryptoWallet); // Ensure packagePlan is set when amount is entered
+            setPackagePlan(value); // Ensure packagePlan is set when amount is entered
+        } else if (name === 'cryptoWallet' && value) {
+            setWalletDetails(value)
         }
 
-        if (name === 'cryptoWallet') {
-            switch (value) {
-                case 'BTC':
-                    setWalletDetails('Bitcoin');
-                    break;
-                case 'ETH':
-                    setWalletDetails('Ethereum');
-                    break;
-                case 'USDT':
-                    setWalletDetails('Tether');
-                    break;
-                default:
-                    setWalletDetails(null);
-                    break;
-            }
-        }
+       
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setLoading(true);
         // Perform form validation here
 
         // Example of simple validation
@@ -64,24 +55,11 @@ const Withdraw = () => {
         console.log('Form submitted', formInput);
     };
 
-    const renderInvestmentMessage = () => {
-        switch (packagePlan) {
-            case 'Basic Plan':
-                return <p className="text-gray-500">You can invest from $100 to $1000</p>;
-            case 'Gold Plan':
-                return <p className="text-gray-500">You can invest from $1001 to $5000</p>;
-            case 'Diamond Plan':
-                return <p className="text-gray-500">You can invest from $5001 to $10000</p>;
-            case 'Platinum Plan':
-                return <p className="text-gray-500">You can invest from $10001 to $50000</p>;
-            default:
-                return null;
-        }
-    };
+   
 
     return (
-        <div className="w-screen h-[30rem] grid items-center justify-center bg-gray-50 sm:px-6 lg:px-8">            
-        <div className='grid py-[3rem] px-6 items-center justify-between gap-6'>      
+        <div className="w-screen h-[40rem] grid items-center justify-center bg-gray-50 sm:px-6 lg:px-8">            
+        <div className='border-2 grid py-[3rem] px-6 items-center justify-between gap-6'>      
             <div>
                 <p className="font-display text-[--bg-color] font-bold text-2xl">Withdraw Investment</p>
             </div>
@@ -105,7 +83,7 @@ const Withdraw = () => {
                 {formInput.cryptoWallet && (
                     <div className="relative">
                         <label htmlFor="amount">Amount</label>
-                        <span className="absolute inset-y-0 left-0 pl-4 pt-6 flex items-center text-gray-700"> $</span>
+                        <span className="absolute inset-y-0 left-0 pl-4  flex items-center text-gray-700"> $</span>
                         <input
                             id="amount"
                             name="amount"
@@ -115,7 +93,7 @@ const Withdraw = () => {
                             value={formInput.amount}
                             onChange={handleInputChange}
                         />
-                        <p className="text-xs">{renderInvestmentMessage()}</p>
+              
                     </div>
                 )}
                 {formInput.cryptoWallet && formInput.amount && (
@@ -171,9 +149,11 @@ const Withdraw = () => {
                                 )}
                     </>
                 )}
-                <button type="submit" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md">
-                    Submit
-                </button>
+                <button type="submit"                
+                     className=" flex justify-center mt-4 bg-blue-500 text-white px-4 py-2 rounded-md">
+                       {loading ? <Oval  visible={true}  height="20" width="20" color="#ffff"  ariaLabel="oval-loading"  wrapperStyle={{}}  wrapperClass=""  />  : 'Submit'}
+                           
+                    </button>
             </form>
         </div>
     </div>
