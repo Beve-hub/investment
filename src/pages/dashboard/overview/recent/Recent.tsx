@@ -117,7 +117,7 @@ const Recent = () => {
           {currentTransactions.map(transaction => (
             <tr key={transaction.serialId} className="text-center">
               <td className="px-4 py-2">{transaction.serialId}</td>
-              <td className="px-4 py-2">{transaction.amount}</td>
+              <td className="px-4 py-2">${transaction.amount}</td>
               <td className="px-4 py-2">{transaction.package}</td>
               <td className="px-4 py-2">{transaction.method}</td>
               <td className="px-4 py-2">{transaction.wallet}</td> {/* Assuming Method is correct, otherwise should be `method` */}

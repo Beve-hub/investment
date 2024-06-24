@@ -1,16 +1,100 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 import Wallet from '../../../../assets/wallet.svg'
 import BasicModal from '../cardModal/BasicModal'
 import GoldModal from '../cardModal/GoldModal';
 import DiamondModal from '../cardModal/DiamondModal';
 import PlatinumModal from '../cardModal/PlatinumModal'
+import { database } from '../../../../firebase';
+import { ref, get } from 'firebase/database';
+
+
+interface UserData {
+  amount: number;
+  packagePlan: string;
+  status: string;
+}
 
 const Card = () => {
+  //Basic state
+  const [totalDepositBasic, setTotalDepositBasic] = useState<number>(0);
+  const [totalWithdrawalBasic, setTotalWithdrawalBasic] = useState<number>(0);  
   const [showBasic, setShowBasic] = useState<boolean>(false);
+
+//Gold state
+const [totalDepositGold, setTotalDepositGold] = useState<number>(0);
+const [totalWithdrawalGold, setTotalWithdrawalGold] = useState<number>(0);  
   const [showGold, setShowGold] = useState<boolean>(false);
+
+
+  // diamond state
+  const [totalDepositDiamond, setTotalDepositDiamond] = useState<number>(0);
+  const [totalWithdrawalDiamond, setTotalWithdrawalDiamond] = useState<number>(0);  
   const [showDiamond, setShowDiamond] = useState<boolean>(false);
+
+
+  //platinum state
+  const [totalDepositPlatinum, setTotalDepositPlatinum] = useState<number>(0);
+  const [totalWithdrawalPlatinum, setTotalWithdrawalPlatinum] = useState<number>(0);  
   const [showPlatinum, setShowPlatinum] = useState<boolean>(false);
  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const userId = sessionStorage.getItem('userId');
+      try {
+        const depositRef = ref(database, `DepositData`);
+        const withdrawalRef = ref(database, `WithdrawData`);
+
+        const depositSnapshot = await get(depositRef);
+        const withdrawalSnapshot = await get(withdrawalRef);
+  
+        const depositData: UserData[] = [];
+        const withdrawalData: UserData[] = [];
+
+        if (depositSnapshot.exists()) {
+          depositSnapshot.forEach((childSnapshot) => {
+            const data = childSnapshot.val();
+            if (data.userId === userId) {
+              depositData.push({
+                amount: data.amount,
+                 packagePlan: data.packagePlan,
+                 status: data.status
+              })
+            }
+          })
+        }
+
+        if (withdrawalSnapshot.exists()) {
+          withdrawalSnapshot.forEach((childSnapshot) => {
+            const data = childSnapshot.val();
+            if (data.userId === userId) {
+              withdrawalData.push({
+                amount: data.amount,
+                 packagePlan: data.packagePlan,
+                 status: data.status
+              })
+            }
+          })
+        }
+
+        setTotalDepositBasic(0)
+        setTotalDepositGold(0)
+        setTotalDepositDiamond(0)
+        setTotalDepositPlatinum(0)
+
+
+
+        setTotalWithdrawalBasic(0)
+        setTotalWithdrawalGold(0)
+        setTotalWithdrawalDiamond(0)
+        setTotalWithdrawalPlatinum(0)
+      }
+      catch (error) {
+        console.error('Error fetching data', error)
+      }
+    }
+    fetchData();
+  }, [])
 
   const handleBasic = () => {
     setShowBasic(!showBasic);
@@ -40,7 +124,7 @@ const Card = () => {
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-xl text-white'>$</span>
-                <h1 className='font-bold text-2xl text-white'>0.00</h1>
+                <h1 className='font-bold text-2xl text-white'>{(totalDepositBasic - totalWithdrawalBasic) <= 0 ? 0 : (totalDepositBasic - totalWithdrawalBasic)}</h1>
               </div>
               <p className='text-sm text-white'>Available Balance</p>
             </div>
@@ -56,7 +140,7 @@ const Card = () => {
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-xl'>$</span>
-                <h1 className='font-bold text-2xl'>0.00</h1>
+                <h1 className='font-bold text-2xl'>{(totalDepositGold - totalWithdrawalGold) <= 0 ? 0 : (totalDepositGold - totalWithdrawalGold)}</h1>
               </div>
               <p className='text-sm'>Available Balance</p>
             </div>
@@ -72,7 +156,7 @@ const Card = () => {
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-xl '>$</span>
-                <h1 className='font-bold text-2xl '>0.00</h1>
+                <h1 className='font-bold text-2xl '>{(totalDepositDiamond - totalWithdrawalDiamond) <= 0 ? 0 : (totalDepositDiamond - totalWithdrawalDiamond)}</h1>
               </div>
               <p className='text-sm '>Available Balance</p>
             </div>
@@ -88,7 +172,7 @@ const Card = () => {
             <div className='grid gap-2'>
               <div className='flex items-center gap-2'>
                 <span className='font-medium text-xl'>$</span>
-                <h1 className='font-bold text-2xl'>0.00</h1>
+                <h1 className='font-bold text-2xl'>{(totalDepositPlatinum - totalWithdrawalPlatinum) <= 0 ? 0 : (totalDepositPlatinum - totalWithdrawalPlatinum)}</h1>
               </div>
               <p className='text-sm'>Available Balance</p>
             </div>

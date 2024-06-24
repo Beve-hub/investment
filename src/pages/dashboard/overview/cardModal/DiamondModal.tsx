@@ -110,7 +110,7 @@ const DiamondModal = ({showDiamond, onClose}: DiamondModalProps) => {
 </div>
 </div>
 
-      </div>
+             </div>
      </div>            
     </div>
         </div>
