@@ -29,6 +29,10 @@ const SideBar = () => {
 
   return (
     <div className='h-screen absolute top-0'>
+      
+
+      <div style={{ width: open ? '200px' : '100px' }} className="w-[400px] h-screen bg-[--layer-color] p-8 fixed z-50 sm:block hidden">
+
       <div className="flex p-2 items-center">   
       <div onClick={handleBar}  className=" block md:hidden ml-4 ">
           {nav ? 
@@ -41,8 +45,7 @@ const SideBar = () => {
           <img src={Logo} alt="Logo" className="w-[2rem] block md:hidden ml-4" />
         </div>        
       </div>
-
-      <div style={{ width: open ? '200px' : '100px' }} className="w-[400px] h-screen bg-[--layer-color] p-8 fixed z-50 sm:block hidden">
+      
         <div className="flex items-center">
           <div onClick={() => navigate('/overview')} className="cursor-pointer">
             <img src={Logo} alt="Logo" className="w-[3rem]" />

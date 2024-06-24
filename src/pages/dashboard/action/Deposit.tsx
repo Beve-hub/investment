@@ -3,7 +3,7 @@ import { IoCopy } from "react-icons/io5";
 import { Oval } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { database } from '../../../firebase';
-import { ref, get, push } from 'firebase/database';
+import { ref, get,  } from 'firebase/database';
 
 interface UserData {
     cryptoWallet: string;
@@ -20,6 +20,7 @@ const Deposit = () => {
         cryptoChannel: '',
         walletAddress: '',
         packagePlan: '',
+        method: 'Deposit'
     });
 
     const [storedData, setStoredData] = useState<UserData[]>([]);
@@ -62,9 +63,7 @@ const Deposit = () => {
             ...formInput,
             [name]: value
         });
-        if (name === 'package') {
-            setPackageData(value);
-        } else if (name === 'cryptoWallet' || name === 'walletAddress' || name === 'cryptoChannel') {
+        if (name === 'cryptoWallet' || name === 'walletAddress' || name === 'cryptoChannel') {
             setWalletDetails(value);
         }
     };
@@ -80,39 +79,46 @@ const Deposit = () => {
     };
 
     const handlePackageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setPackageData(e.target.value);
+        const { value } = e.target;
+        setFormInput({
+            ...formInput,
+            packagePlan: value
+        });
+        setPackageData(value);
     };
 
     const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
-
-         // Get current date and time
-         const currentDate = new Date().toISOString();
-         const serialId = Math.floor(Math.random() * 1000000);
-         const status = 'Pending'
+        const currentDate = new Date().toISOString();
+        const serialId = Math.floor(Math.random() * 1000000);
+        const status = 'Pending'
         const userId = sessionStorage.getItem('userId') ?? '';      
+
+        const adminData = storedData.find(item => item.cryptoWallet === formInput.cryptoWallet);
+
+        if (adminData) {
+            formInput.cryptoChannel = adminData.cryptoChannel;
+            formInput.walletAddress = adminData.walletAddress;
+        }
 
         try {
             const resp = await fetch(url, {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({...formInput, date: currentDate, serialId: serialId, status, userId,   }) // Include dateTime in the formInput object
+                body: JSON.stringify({ ...formInput, date: currentDate, serialId: serialId, status, userId })
             });
     
-            if (formInput.cryptoWallet.trim() !== '' && formInput.walletAddress.trim() !== '' && formInput.cryptoChannel.trim() !== '') {
-                const usersRef = ref(database, 'DepositData');
-                push(usersRef, { ...formInput, date: currentDate, serialId: serialId, status , userId,  }); 
+            setFormInput({
+                amount: '',
+                cryptoWallet: '',
+                cryptoChannel: '',
+                walletAddress: '',
+                packagePlan: '',
+                method: 'Deposit'
+            });
 
-                setFormInput({
-                    amount: '',
-                    cryptoWallet: '',
-                    cryptoChannel: '',
-                    walletAddress: '',
-                    packagePlan:'',
-                });
-            }
             if (resp){
                 navigate('/overview');
                 alert("Successful");
@@ -142,7 +148,6 @@ const Deposit = () => {
         }
     };
 
-
     return (
         <div className="w-screen h-[40rem] grid items-center justify-center bg-gray-50 sm:px-6 lg:px-8">
             <div className='border-2 grid py-[3rem] px-6 items-center justify-between gap-6'>
@@ -166,11 +171,11 @@ const Deposit = () => {
                             <option value="Platinum Plan">Platinum Plan</option>
                         </select>
                     </div>
-                    {packageData && (
+                    {formInput.packagePlan && (
                         <>
                             <div className="relative">
                                 <label htmlFor="amount">Amount</label>
-                                <span className="absolute inset-y-0 left-0 pl-4 pt-4 flex items-center text-gray-700 h-full">$</span>
+                                <span className="absolute inset-y-0 left-0 pl-6 pt-2 flex items-center text-gray-700"> $</span>
                                 <input
                                     id="amount"
                                     name="amount"
@@ -199,26 +204,26 @@ const Deposit = () => {
                                 </select>
                             </div>
                             {walletDetails && (
-                                <>
-                                    {storedData
-                                     .filter(item => item.cryptoWallet === formInput.cryptoWallet)
-                                     .map((item, index) => (
-                                        <div key={index} className='grid gap-4'>
-                                            <div className='flex items-center justify-between'>
-                                                <p className='text-sm'>Wallet Name: </p>
-                                                <p className='font-semibold'>{item.cryptoWallet ?? 'N/A'}</p>
-                                            </div>
-                                            <div className='flex items-center justify-between'>
-                                                <p className='text-sm'>Network: </p>
-                                                <p className='font-semibold'>{item.cryptoChannel ?? 'N/A'}</p>
-                                            </div>
-                                            <div className='flex items-center justify-between'>
-                                                <p className='text-sm'>Wallet Address: </p>
-                                                <p className='flex gap-2 font-semibold'>{item.walletAddress ?? 'N/A'} <span><IoCopy onClick={() => handleCopyWalletAddress(item.walletAddress ?? '')} /></span></p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </>
+                                  <>
+                                  {storedData
+                                   .filter(item => item.cryptoWallet === formInput.cryptoWallet)
+                                   .map((item, index) => (
+                                      <div key={index} className='grid gap-4'>
+                                          <div className='flex items-center justify-between'>
+                                              <p className='text-sm'>Wallet Name: </p>
+                                              <p className='font-semibold'>{item.cryptoWallet }</p>
+                                          </div>
+                                          <div className='flex items-center justify-between'>
+                                              <p className='text-sm'>Network: </p>
+                                              <p className='font-semibold'>{item.cryptoChannel }</p>
+                                          </div>
+                                          <div className='flex items-center justify-between'>
+                                              <p className='text-sm'>Wallet Address: </p>
+                                              <p className='flex gap-2 font-semibold'>{item.walletAddress} <span><IoCopy onClick={() => handleCopyWalletAddress(item.walletAddress ?? '')} /></span></p>
+                                          </div>
+                                      </div>
+                                  ))}
+                              </>
                             )}
 
                             <button type="submit" className="flex justify-center mt-4 bg-blue-500 text-white px-4 py-2 rounded-md">
