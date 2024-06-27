@@ -19,7 +19,8 @@ import ValidId from './pages/auth/register/ValidId';
 import PackageForm from './pages/dashboard/Packages/screen/PackageForm';
 import Withdraw from './pages/dashboard/action/Withdraw';
 import Deposit from './pages/dashboard/action/Deposit';
-import Admin from './pages/dashboard/admin/Admin';
+import Board from './pages/admin/Board';
+
 
 
 
@@ -51,11 +52,10 @@ function App() {
           <Route path='/packageForm' element={<PackageForm/>}/>
           <Route path='/deposit' element={<Deposit/>}/>
           <Route path='/withdraw' element={<Withdraw/>}/>
-          <Route path='/adminBook' element={<Admin/>}/>
+          <Route path='/adminBook' element={<Board/>}/>
         </Routes>
     </Router>
   )
 }
 
 export default App
-Admin
