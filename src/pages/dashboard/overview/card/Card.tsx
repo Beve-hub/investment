@@ -105,7 +105,7 @@ const [totalWithdrawalGold, setTotalWithdrawalGold] = useState<number>(0);
   };
   const handleDiamond = () => {
     setShowDiamond(!showDiamond);
-  };
+  };    
   const handlePlatinum = () => {
     setShowPlatinum(!showPlatinum);
   };
