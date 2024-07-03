@@ -28,10 +28,8 @@ const SideBar = () => {
     const fetchData = async () => {
         try {                
             const userDocRef = doc(firestore, 'users', userId);
-            console.log('userId', userId);
             const snapshot = await getDoc(userDocRef);
-            if (snapshot.exists()) {
-                console.log('userdetails', snapshot.data());
+            if (snapshot.exists()) {     
                 const userDetails = snapshot.data();
                 setFirstName(userDetails?.firstName);
             }

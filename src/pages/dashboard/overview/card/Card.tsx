@@ -6,14 +6,19 @@ import DiamondModal from '../cardModal/DiamondModal';
 import PlatinumModal from '../cardModal/PlatinumModal';
 import { database } from '../../../../firebase';
 import { ref, get } from 'firebase/database';
+import {  auth } from "../../../../firebase";
+ import { useNavigate } from'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 
 interface UserData {
   amount: number;
   packagePlan: string;
   status: string;
+  userId: string;
 }
 
 const Card = () => {
+  const navigate = useNavigate();
   // Basic state
   const [totalDepositBasic, setTotalDepositBasic] = useState<number>(0);
   const [totalWithdrawalBasic, setTotalWithdrawalBasic] = useState<number>(0);
@@ -34,28 +39,54 @@ const Card = () => {
   const [totalWithdrawalPlatinum, setTotalWithdrawalPlatinum] = useState<number>(0);
   const [showPlatinum, setShowPlatinum] = useState<boolean>(false);
 
+  const [userId, setUserId] = useState<string | null>(null);
+ 
+ 
+  useEffect(() => {
+    // Listen to authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        navigate('/login'); // Navigate to login if not authenticated
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+ 
+
   useEffect(() => {
     const fetchData = async () => {
-      const userId = sessionStorage.getItem('userId');
+      if (!userId) return;
+      console.log('Fetching user data for userId:', userId);
+
 
       try {
         const depositRef = ref(database, `DepositData`);
         const withdrawalRef = ref(database, `WithdrawData`);
+        console.log('data', depositRef);
+        
+
         
         const depositSnapshot = await get(depositRef);
+        console.log('this is data snapshot', depositSnapshot)
         const withdrawalSnapshot = await get(withdrawalRef);
 
         const depositData: UserData[] = [];
         const withdrawalData: UserData[] = [];
     
         if (depositSnapshot.exists()) {
+          console.log('data', depositSnapshot.exists());
           depositSnapshot.forEach((childSnapshot) => {
-            const data = childSnapshot.val();          
+            const data = childSnapshot.val();
+            console.log('this is data', data);          
             if (data.userId === userId) {
               depositData.push({
                 amount: data.amount,
                 packagePlan: data.packagePlan,
                 status: data.status,
+                userId: data.userId,
               });
             }
           });
@@ -69,14 +100,13 @@ const Card = () => {
                 amount: data.amount,
                 packagePlan: data.packagePlan,
                 status: data.status,
+                userId: data.userId,
               });
             }
           });
         }         
 
-       
-
-             // Reset the deposit and withdrawal amounts
+           // Reset the deposit and withdrawal amounts
          setTotalDepositBasic(0);
          setTotalDepositGold(0);
          setTotalDepositDiamond(0);
@@ -89,19 +119,20 @@ const Card = () => {
 
 
        // Update deposit amounts based on packagePlan
+       console.log("this is deposit data", depositData)
        depositData.forEach((data) => {
-        if (data.status === 'successful') {
+        if (data.status === 'Successful') {
           switch (data.packagePlan) {
-            case 'Basic':
+            case 'Basic Plan':
               setTotalDepositBasic((prevTotal) => prevTotal + Number(data.amount));
               break;
-            case 'Gold':
+            case 'Gold Plan':
               setTotalDepositGold((prevTotal) => prevTotal + Number(data.amount));
               break;
-            case 'Diamond':
+            case 'Diamond Plan':
               setTotalDepositDiamond((prevTotal) => prevTotal + Number(data.amount));
               break;
-            case 'Platinum':
+            case 'Platinum Plan':
               setTotalDepositPlatinum((prevTotal) => prevTotal + Number(data.amount));
               break;
             default:
@@ -110,9 +141,10 @@ const Card = () => {
         }
       });
 
+      console.log("this is withdraw data", withdrawalData)
       // Update withdrawal amounts based on packagePlan
       withdrawalData.forEach((data) => {
-        if (data.status === 'successful') {
+        if (data.status === 'Successful') {
           switch (data.packagePlan) {
             case 'Basic':
               setTotalWithdrawalBasic((prevTotal) => prevTotal + Number(data.amount));
@@ -132,21 +164,18 @@ const Card = () => {
         }
       });
 
-
-   
-         console.log('Total Deposit Basic:', totalDepositBasic);
-         console.log('Total Deposit Gold:', totalDepositGold);
-         console.log('Total Deposit Diamond:', totalDepositDiamond);
-         console.log('Total Deposit Platinum:', totalDepositPlatinum);
-
+      console.log('this is total deposit data', totalDepositBasic);
+      console.log('this is set total deposit data', setTotalDepositBasic);
       } catch (error) {
         console.error('Error fetching data', error);
       }
     };
     fetchData();
-  }, []);
+  }, [userId]);
 
   const handleBasic = () => {
+    console.log(totalDepositBasic)
+    console.log(userId)
     setShowBasic(!showBasic);
   };
 
@@ -181,19 +210,19 @@ const Card = () => {
         </div>
       </div>
 
-      <div onClick={handleGold} className='border-r-[5px] bg-[#fac165] border-[#e58d00]  grid justify-start px-4 py-6 rounded-2xl gap-8  w-[15rem]'>
+      <div onClick={handleGold} className='border-r-[5px] bg-[#d18f25] border-[#ffc15e]  grid justify-start px-4 py-6 rounded-2xl gap-8  w-[15rem]'>
         <div className='flex items-center gap-1'>
           <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm'>
             <img src={Wallet} alt='' className='w-[16px]' />
           </div>
-          <h2 className='text-md font-semibold'>Gold Balance</h2>
+          <h2 className='text-md font-semibold text-white'>Gold Balance</h2>
         </div>
         <div className='grid gap-2'>
           <div className='flex items-center gap-2'>
-            <span className='font-medium text-xl'>$</span>
-            <h1 className='font-bold text-2xl'>{(totalDepositGold - totalWithdrawalGold) <= 0 ? 0 : (totalDepositGold - totalWithdrawalGold)}</h1>
+            <span className='font-medium text-xl text-white'>$</span>
+            <h1 className='font-bold text-2xl text-white'>{(totalDepositGold - totalWithdrawalGold) <= 0 ? 0 : (totalDepositGold - totalWithdrawalGold)}</h1>
           </div>
-          <p className='text-sm'>Available Balance</p>
+          <p className='text-sm text-white'>Available Balance</p>
         </div>
       </div>
 
@@ -202,30 +231,30 @@ const Card = () => {
           <div className='w-[22px] h-[22px] bg-[#fffafa] p-1 rounded-sm items-center'>
             <img src={Wallet} alt='' className='w-[16px]' />
           </div>
-          <h2 className='text-md font-semibold'>Diamond Balance</h2>
+          <h2 className='text-md font-semibold text-white'>Diamond Balance</h2>
         </div>
         <div className='grid gap-2'>
           <div className='flex items-center gap-2'>
-            <span className='font-medium text-xl'>$</span>
-            <h1 className='font-bold text-2xl'>{(totalDepositDiamond - totalWithdrawalDiamond) <= 0 ? 0 : (totalDepositDiamond - totalWithdrawalDiamond)}</h1>
+            <span className='font-medium text-xl text-white'>$</span>
+            <h1 className='font-bold text-2xl text-white'>{(totalDepositDiamond - totalWithdrawalDiamond) <= 0 ? 0 : (totalDepositDiamond - totalWithdrawalDiamond)}</h1>
           </div>
-          <p className='text-sm'>Available Balance</p>
+          <p className='text-sm text-white'>Available Balance</p>
         </div>
       </div>
 
-      <div onClick={handlePlatinum} className='border-r-[5px] bg-[#0dfeb2] border-[#009889] grid justify-start px-4 py-6 rounded-2xl gap-8  w-[15rem]'>
+      <div onClick={handlePlatinum} className='border-r-[5px] bg-[#158028] border-[#70ff8b] grid justify-start px-4 py-6 rounded-2xl gap-8  w-[15rem]'>
         <div className='flex items-center gap-1'>
           <div className='w-[22px] h-[22px] bg-white p-1 rounded-sm'>
             <img src={Wallet} alt='' className='w-[16px]' />
           </div>
-          <h2 className='text-md font-semibold'>Platinum Balance</h2>
+          <h2 className='text-md font-semibold text-white'>Platinum Balance</h2>
         </div>
         <div className='grid gap-2'>
           <div className='flex items-center gap-2'>
-            <span className='font-medium text-xl'>$</span>
-            <h1 className='font-bold text-2xl'>{(totalDepositPlatinum - totalWithdrawalPlatinum) <= 0 ? 0 : (totalDepositPlatinum - totalWithdrawalPlatinum)}</h1>
+            <span className='font-medium text-xl text-white'>$</span>
+            <h1 className='font-bold text-2xl text-white'>{(totalDepositPlatinum - totalWithdrawalPlatinum) <= 0 ? 0 : (totalDepositPlatinum - totalWithdrawalPlatinum)}</h1>
           </div>
-          <p className='text-sm'>Available Balance</p>
+          <p className='text-sm text-white'>Available Balance</p>
         </div>
       </div>
 

@@ -30,6 +30,7 @@ const Settings = () => {
 
     return () => unsubscribe();
   }, [navigate]);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,17 +53,11 @@ const Settings = () => {
     fetchData();
   }, [userId]);
 
-  const navigateToOverview = () => {
-    navigate('/overview');
-  };
-
   return (
     <section className='md:min-h-[30rem] top-0 overflow-x-hidden overflow-y-auto'>
       <div className='grid justify-center items-center'>
         <div className='mt-20 mb-24 max-w-[40rem] flex justify-around'>
-          <div onClick={navigateToOverview} className='cursor-pointer'>
-            <p>Back to Overview</p>
-          </div>
+          
           <p className='font-bold text-3xl'>Settings</p>
         </div>
         <div className='w-screen grid justify-center items-center gap-8'>
