@@ -142,7 +142,7 @@ const Invest = () => {
                         password,
                     });
                 }
-                navigate('/validId');
+                navigate('/');
             } catch (error) {
                 console.log(error);
                 alert('Registration failed. Please try again.');
