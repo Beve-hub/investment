@@ -130,7 +130,7 @@ const Login = () => {
                       </label>
                     </div>
                     <p className="text-sm cursor-pointer">
-                      <a>Forgotten Password?</a>
+                      <a href='/recover' className='text-[#122efd]'>Forgotten Password?</a>
                     </p>
                   </div>
                 </div>

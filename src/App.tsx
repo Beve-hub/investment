@@ -20,6 +20,8 @@ import PackageForm from './pages/dashboard/Packages/screen/PackageForm';
 import Withdraw from './pages/dashboard/action/Withdraw';
 import Deposit from './pages/dashboard/action/Deposit';
 import Board from './pages/admin/Board';
+import Action from './pages/auth/extra/Action';
+import Recover from './pages/auth/extra/Recover';
 
 
 
@@ -53,6 +55,8 @@ function App() {
           <Route path='/deposit' element={<Deposit/>}/>
           <Route path='/withdraw' element={<Withdraw/>}/>
           <Route path='/adminBook' element={<Board/>}/>
+          <Route path='/action' element={<Action/>}/>
+          <Route path='/recover' element={<Recover/>}/>
         </Routes>
     </Router>
   )
