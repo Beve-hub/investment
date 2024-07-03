@@ -45,7 +45,7 @@ const RecentAdmin = () => {
     setLoading(true);
     try {
       const url =
-        PaymentMethod.includes("withdrawal") &&
+        PaymentMethod.includes("withdrawa") &&
         PaymentMethod.includes("deposit")
           ? url2
           : url1;
@@ -74,7 +74,7 @@ const RecentAdmin = () => {
     setLoader(true);
     try {
       const url =
-        PaymentMethod.includes("withdrawal") &&
+        PaymentMethod.includes("withdrawa") &&
         PaymentMethod.includes("deposit")
           ? url2
           : url1;
