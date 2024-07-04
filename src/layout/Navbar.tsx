@@ -20,19 +20,16 @@ const Navbar = () => {
         <div className={`${flexBetween} fixed top-0 z-50 w-full bg-[--layer-color]`}>
             <div className='mx-auto w-[96rem] py-2 '>
                 <div className='flex justify-between'>
-
-                <div className='flex items-center'>
-                <div onClick={handleNav} className='block md:hidden ml-4 '>
-                 {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1 ' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
-                 </div>
+                <div className='flex items-center justify-between'>
                  <div className='flex items-center'>
                  <a href='/'>
                   <img src={Logo} alt='' className='w-[4rem] ml-[3rem] hover:scale-105'/>
                   </a>
                   <p className='font-display font-bold text-2xl'>Crownstone</p>
                  </div>
-                  
-                    
+                 <div onClick={handleNav} className='block md:hidden ml-4 '>
+                 {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1 ' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
+                 </div>
                 </div> 
                 <div className='grid justify-end'>
                 <div className='item-center justify-between sm:flex hidden'>                
@@ -79,7 +76,9 @@ const Navbar = () => {
                 
                 </div>
                 <div className={!nav ? 'fixed right-0 top-0 w-[60%] h-full  border-r-gray-900 bg-[#989898] z-10 ease-in-out duration-500': 'fixed left-[-400%]'}>
-                              
+                <div onClick={handleNav} className='block md:hidden m-4 '>
+                 {!nav ? <img src={cancel} alt=''  className='bg-[#fff] p-1 ' /> : <img src={menu} alt=''  className='bg-[#fff] p-1' /> }
+                 </div>        
                <ul className=' grid justify-start ml-20 gap-6 font-medium mt-20'>
 <li className='text-[#151515] font-display  transition duration-500 hover:border-b-2 border-[var(--button-color)] cursor-pointer'>
         <a href="/about"  >

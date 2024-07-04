@@ -60,7 +60,7 @@ const SideBar = () => {
 };
 
   return (
-    <div className='h-screen absolute top-0'>
+    <div className=' absolute top-0'>
       <div style={{ width: open ? '200px' : '100px' }} className="w-[400px] h-screen bg-[--layer-color] p-8 fixed z-50 sm:block hidden">
       <div className="flex p-2 items-center">   
       <div onClick={handleBar}  className=" block md:hidden ml-4 ">
@@ -97,11 +97,23 @@ const SideBar = () => {
           ))}
         </div>            
       </div>
-
+           
           <div>
-          
+          <div className="flex py-2 pr-8 items-center w-screen justify-end ">  
+             <img src={menu}  alt="Menu" onClick={handleBar}   className=" z-10 md:hidden m-6 " />  
+             </div>
         {isLoggedIn && (
-          <div className={`fixed z-50 h-screen p-8 bg-[--layer-color] ${nav ? 'right-0' : 'right-[-400%]'} md:static md:block transition-all duration-300 md:hidden`}>
+          <div className={`fixed h-screen z-10 top-0  p-8 bg-[--layer-color] ${nav ? 'right-0' : 'right-[-400%]'} md:static  transition-all duration-300 md:hidden`}>
+               <div className="flex p-2 items-center justify-between">             
+        <div onClick={handleBar}  className=" block md:hidden ml-2 ">
+          {nav ? 
+            <img src={cancel}  alt="Cancel" />
+         : 
+            <img src={menu}  alt="Menu"  />
+         }
+        </div>     
+               
+      </div>
       <ul className="text-color grid items-center justify-center uppercase">
         <div onClick={toggleIcon} className="flex items-center gap-2">
           <div className='flex items-center gap-2'>
