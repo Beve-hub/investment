@@ -192,7 +192,7 @@ const Card = () => {
   };
 
   return (
-    <div className='grid items-center my-4 justify-between gap-6 md:grid-cols-4 '>
+    <div className='grid mx-4 my-4  gap-6 md:grid-cols-4 justify-center items-center'>
       <div onClick={handleBasic} className='grid justify-start px-4 py-6 rounded-2xl gap-8 bg-[#025483] border-r-4 border-[#003e62]  w-[15rem] cursor-pointer'>
         <div className='flex gap-1 items-center'>
           <div className='w-[22px] h-[22px] bg-[#fff] p-1 rounded-sm'>

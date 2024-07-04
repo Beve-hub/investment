@@ -52,7 +52,7 @@ const Top = () => {
         setIcon(!icon);
     }
     return (
-        <div className='flex justify-between py-[3rem] max-w-screen'>
+        <div className='flex justify-between py-[3rem] px-6 max-w-screen'>
         <div className='flex gap-2'>
             <p className='text-2xl font-bold'>Welcome,</p>
             <div>
