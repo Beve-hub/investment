@@ -2,6 +2,7 @@ import RecentAdmin from "./screen/RecentAdmin"
 import logo from '../../assets/logo.png'
 import Card from "./screen/CardBook"
 import Images from "./screen/Images"
+import Profile from "./screen/Profile"
 
 
 const Board = () => {
@@ -15,6 +16,7 @@ const Board = () => {
             <Card/>
             <RecentAdmin/>
             <Images/>
+            <Profile/>
         </div>
   </section>
     )

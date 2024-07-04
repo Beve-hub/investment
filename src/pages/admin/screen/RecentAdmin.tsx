@@ -45,8 +45,8 @@ const RecentAdmin = () => {
     setLoading(true);
     try {
       const url =
-        PaymentMethod.includes("WithdrawData") &&
-        PaymentMethod.includes("DepositData")
+        PaymentMethod.includes("Withdrawal") &&
+        PaymentMethod.includes("Deposit")
           ? url2
           : url1;
       const resp = await fetch(url, {
@@ -74,8 +74,8 @@ const RecentAdmin = () => {
     setLoader(true);
     try {
       const url =
-      PaymentMethod.includes("WithdrawData") &&
-      PaymentMethod.includes("DepositData")
+        PaymentMethod.includes("withdrawal") &&
+        PaymentMethod.includes("deposit")
           ? url2
           : url1;
       const resp = await fetch(url, {
